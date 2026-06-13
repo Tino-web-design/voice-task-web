@@ -1,0 +1,130 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta 
+  name="viewport" content="width=device-width, initial-scale=1.0"> <title>Task 
+  Report Pro</title> <style>
+    *{margin:0;padding:0;box-sizing:border-box} 
+    body{font-family:Arial,sans-serif;background:#0f0f1a;color:#e0e0ff;min-height:100vh} 
+    nav{background:#161626;border-bottom:1px solid #222244;padding:14px 
+    20px;display:flex;justify-content:space-between;align-items:center} 
+    .logo{font-size:20px;font-weight:900;color:#fff}.logo span{color:#ffe066} 
+    .badge{background:linear-gradient(135deg,#00c6ff,#0072ff);color:#fff;font-size:11px;font-weight:700;padding:5px 
+    14px;border-radius:20px} .hero{text-align:center;padding:50px 20px 30px} 
+    .hero 
+    h1{font-size:42px;font-weight:900;color:#fff;line-height:1;margin-bottom:12px} 
+    .hero h1 span{color:#ffe066} .hero 
+    p{font-size:15px;color:#9999cc;max-width:440px;margin:0 auto 24px} 
+    .stats{display:flex;justify-content:center;gap:30px} .stat 
+    strong{display:block;font-size:28px;font-weight:900;color:#ffe066} .stat 
+    span{font-size:11px;color:#7777aa;font-weight:600;text-transform:uppercase} 
+    .main{max-width:640px;margin:0 auto;padding:0 20px 60px} 
+    .card{background:#161626;border:1px solid 
+    #222244;border-radius:14px;padding:24px;margin-bottom:18px}
+    .card-title{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7777aa;margin-bottom:16px} 
+    label{display:block;font-size:13px;font-weight:600;color:#aaaacc;margin-bottom:7px} 
+    input,textarea{width:100%;background:#0f0f1a;border:1px solid 
+    #222244;border-radius:10px;padding:12px 
+    14px;color:#e0e0ff;font-size:14px;font-family:Arial,sans-serif;outline:none;margin-bottom:18px} 
+    textarea{min-height:180px;resize:vertical;line-height:1.6} 
+    input:focus,textarea:focus{border-color:#0072ff} 
+    .example{background:rgba(0,114,255,0.07);border:1px solid 
+    rgba(0,114,255,0.2);border-radius:10px;padding:12px 
+    14px;margin-bottom:18px;font-size:12px;color:#8888bb;line-height:1.8} 
+    .example 
+    strong{display:block;color:#00c6ff;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px} 
+    .btn{width:100%;background:linear-gradient(135deg,#00c6ff,#0072ff);color:#fff;border:none;border-radius:12px;padding:15px;font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px} 
+    .btn:disabled{opacity:0.5;cursor:not-allowed} 
+    .spinner{width:16px;height:16px;border:2px solid 
+    rgba(255,255,255,0.3);border-top-color:#fff;border-radius:50%;animation:spin 
+    0.8s linear infinite;display:none} @keyframes 
+    spin{to{transform:rotate(360deg)}}
+    #result{display:none}
+    .result-card{background:linear-gradient(135deg,rgba(0,200,120,0.1),rgba(0,114,255,0.1));border:1px 
+    solid rgba(0,200,120,0.25);border-radius:14px;padding:22px} 
+    .result-title{font-size:18px;font-weight:800;color:#fff;margin-bottom:4px} 
+    .result-sub{font-size:13px;color:#7777aa;margin-bottom:18px} 
+    .summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px} 
+    .sum-item{background:rgba(255,255,255,0.05);border-radius:10px;padding:12px;text-align:center} 
+    .sum-item strong{display:block;font-size:24px;font-weight:900;color:#ffe066} 
+    .sum-item 
+    span{font-size:10px;color:#7777aa;font-weight:600;text-transform:uppercase} 
+    .dl-btns{display:flex;gap:10px} 
+    .dl-btn{flex:1;padding:13px;border-radius:10px;font-size:13px;font-weight:700;text-decoration:none;text-align:center;border:none;cursor:pointer} 
+    .xl{background:linear-gradient(135deg,#1D6F42,#21A366);color:#fff} 
+    .pdf{background:linear-gradient(135deg,#C0392B,#E74C3C);color:#fff} 
+    .error{background:rgba(231,76,60,0.1);border:1px solid 
+    rgba(231,76,60,0.3);border-radius:10px;padding:12px 
+    14px;color:#ff8888;font-size:13px;display:none;margin-bottom:14px} 
+    footer{background:#0a0a14;border-top:1px solid 
+    #222244;padding:18px;text-align:center}
+    footer p{font-size:12px;color:#7777aa;margin-bottom:8px} 
+    .wa{color:#25D366;font-size:13px;font-weight:700;text-decoration:none;margin:0 
+    8px}
+  </style> </head> <body> <nav> <div 
+  class="logo">TASK<span>REPORT</span>PRO</div> <div class="badge">⚡ 5-min 
+  turnaround</div>
+</nav> <section class="hero"> <h1>TURN NOTES INTO<br><span>PRO 
+  REPORTS</span></h1> <p>Paste your task notes — get a polished Excel & PDF 
+  report instantly.</p> <div class="stats">
+    <div class="stat"><strong>$25</strong><span>per report</span></div> <div 
+    class="stat"><strong>5 MIN</strong><span>turnaround</span></div> <div 
+    class="stat"><strong>2 FILES</strong><span>Excel + PDF</span></div>
+  </div> </section> <main class="main"> <div class="card"> <div 
+    class="card-title">📝 Enter Your Task Notes</div> <label>Customer / Project 
+    Name</label> <input type="text" id="customerName" placeholder="e.g. John 
+    Smith" /> <label>Paste your task notes here</label> <textarea id="notesInput" 
+    placeholder="Paste your raw notes here..."></textarea> <div class="example">
+      <strong>Example</strong> Monday 2024-06-10: Fence installation, 8 hours 
+      work, cost $450<br> Tuesday 2024-06-11: Foundation repair, 6 hours work, 
+      cost $200<br> Wednesday 2024-06-12: Landscaping, 5 hours work, cost $150
+    </div> <div class="error" id="errorBox"></div> <button class="btn" 
+    id="generateBtn" onclick="generateReport()">
+      <div class="spinner" id="spinner"></div> <span id="btnText">📊 Generate My 
+      Report</span>
+    </button> </div> <div id="result"> <div class="result-card"> <div 
+      class="result-title">✅ Reports Ready!</div> <div 
+      class="result-sub">Download your professional documents below</div> <div 
+      class="summary">
+        <div class="sum-item"><strong 
+        id="sumTasks">0</strong><span>Tasks</span></div> <div 
+        class="sum-item"><strong id="sumHours">0</strong><span>Hours</span></div> 
+        <div class="sum-item"><strong 
+        id="sumCost">$0</strong><span>Cost</span></div>
+      </div> <div class="dl-btns"> <a class="dl-btn xl" id="excelBtn" href="#" 
+        target="_blank">📊 Excel</a> <a class="dl-btn pdf" id="pdfBtn" href="#" 
+        target="_blank">📄 PDF</a>
+      </div> </div> </div> </main> <footer> <p>Contact us on WhatsApp</p> <a 
+  class="wa" href="https://wa.me/263711415728">💬 +263 71 141 5728</a> <a 
+  class="wa" href="https://wa.me/260774876579">💬 +260 774 876 579</a>
+</footer> <script> async function generateReport() { const notes = 
+  document.getElementById('notesInput').value.trim(); const customerName = 
+  document.getElementById('customerName').value.trim() || 'Customer'; const btn = 
+  document.getElementById('generateBtn'); const spinner = 
+  document.getElementById('spinner'); const btnText = 
+  document.getElementById('btnText'); const errorBox = 
+  document.getElementById('errorBox'); const result = 
+  document.getElementById('result'); if (!notes) { showError('Please paste your 
+  task notes first.'); return; } btn.disabled = true; spinner.style.display = 
+  'block'; btnText.textContent = 'Generating...'; errorBox.style.display = 
+  'none'; result.style.display = 'none'; try {
+    const res = await fetch('/generate', { method: 'POST', headers: 
+      {'Content-Type': 'application/json'}, body: JSON.stringify({notes, 
+      customer_name: customerName})
+    });
+    const data = await res.json(); if (!res.ok || data.error) throw new 
+    Error(data.error || 'Something went wrong.'); 
+    document.getElementById('sumTasks').textContent = data.summary.tasks; 
+    document.getElementById('sumHours').textContent = data.summary.total_hours; 
+    document.getElementById('sumCost').textContent = '$' + 
+    data.summary.total_cost.toFixed(2); document.getElementById('excelBtn').href 
+    = '/download/' + data.excel; document.getElementById('pdfBtn').href = 
+    '/download/' + data.pdf; result.style.display = 'block'; 
+    result.scrollIntoView({behavior:'smooth'});
+  } catch(err) { showError(err.message); }
+  finally { btn.disabled = false; spinner.style.display = 'none'; 
+    btnText.textContent = '📊 Generate My Report';
+  }
+}
+function showError(msg) { const box = document.getElementById('errorBox'); 
+  box.textContent = '⚠️ ' + msg; box.style.display = 'block';
+}
+</script> </body>
+</html>
