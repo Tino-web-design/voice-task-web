@@ -76,7 +76,7 @@
       work, cost $450<br> Tuesday 2024-06-11: Foundation repair, 6 hours work, 
       cost $200<br> Wednesday 2024-06-12: Landscaping, 5 hours work, cost $150
     </div> <div class="error" id="errorBox"></div> <button class="btn" 
-    id="generateBtn" onclick="generateReport()">
+    id="generateBtn" >
       <div class="spinner" id="spinner"></div> <span id="btnText">📊 Generate My 
       Report</span>
     </button> </div> <div id="result"> <div class="result-card"> <div 
@@ -126,5 +126,6 @@
 function showError(msg) { const box = document.getElementById('errorBox'); 
   box.textContent = '⚠️ ' + msg; box.style.display = 'block';
 }
+document.getElementById("generateBtn").addEventListener("click", generateReport);
 </script> </body>
 </html>
