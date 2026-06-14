@@ -126,7 +126,6 @@
 function showError(msg) { const box = document.getElementById('errorBox'); 
   box.textContent = '⚠️ ' + msg; box.style.display = 'block';
 }
-
 document.getElementById("generateBtn").addEventListener("click", generateReport);
 </script> </body>
 </html>
